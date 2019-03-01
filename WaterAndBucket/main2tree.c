@@ -83,8 +83,8 @@ int Transfer(int b1, int b2, int lnum, int *trackidx)
         {
             tmp1 = Bucket1;
             stats[Bucket1][tmp2] = lnum+1;
-            printf("将桶1装满\n");
-            printf("第%d层，此时水桶水量: %d %d\n", lnum+1, tmp1, tmp2);
+            printf("\t将桶1装满\n");
+            printf("\t第%d层，此时水桶水量: %d %d\n", lnum+1, tmp1, tmp2);
             settrack(idx, lnum+1, tmp1, tmp2, init1, init2);
             idx++;
         }
@@ -101,8 +101,8 @@ int Transfer(int b1, int b2, int lnum, int *trackidx)
             if(stats[tmp1][tmp2]==-1)
             {
                 stats[tmp1][tmp2] = lnum+1;
-                printf("将桶2 %d升倒入桶1\n", tmp1);
-                printf("第%d层，此时水桶水量: %d %d\n", lnum+1, tmp1, tmp2);
+                printf("\t将桶2 %d升倒入桶1\n", tmp1);
+                printf("\t第%d层，此时水桶水量: %d %d\n", lnum+1, tmp1, tmp2);
                 settrack(idx, lnum+1, tmp1, tmp2, init1, init2);
                 idx++;
             }
@@ -115,8 +115,8 @@ int Transfer(int b1, int b2, int lnum, int *trackidx)
         {
             stats[0][tmp2] = lnum+1;
             tmp1 = 0;
-            printf("将桶1倒空\n");
-            printf("第%d层，此时水桶水量: %d %d\n", lnum+1, tmp1, tmp2);
+            printf("\t将桶1倒空\n");
+            printf("\t第%d层，此时水桶水量: %d %d\n", lnum+1, tmp1, tmp2);
             settrack(idx, lnum+1, tmp1, tmp2, init1, init2);
             idx++;
         }
@@ -143,8 +143,8 @@ int Transfer(int b1, int b2, int lnum, int *trackidx)
             if(stats[tmp1][tmp2]==-1)
             {
                 stats[tmp1][tmp2] = lnum+1;
-                printf("将桶1 %d升倒入桶2\n", res2);
-                printf("第%d层，此时水桶水量: %d %d\n", lnum+1, tmp1, tmp2);
+                printf("\t将桶1 %d升倒入桶2\n", res2);
+                printf("\t第%d层，此时水桶水量: %d %d\n", lnum+1, tmp1, tmp2);
                 settrack(idx, lnum+1, tmp1, tmp2, init1, init2);
                 idx++;
             }
@@ -162,8 +162,8 @@ int Transfer(int b1, int b2, int lnum, int *trackidx)
         {
             stats[tmp1][Bucket2] = lnum+1;
             tmp2 = Bucket2;
-            printf("将桶2装满\n");
-            printf("第%d层，此时水桶水量: %d %d\n", lnum+1, tmp1, tmp2);
+            printf("\t将桶2装满\n");
+            printf("\t第%d层，此时水桶水量: %d %d\n", lnum+1, tmp1, tmp2);
             settrack(idx, lnum+1, tmp1, tmp2, init1, init2);
             idx++;
         }
@@ -187,8 +187,8 @@ int Transfer(int b1, int b2, int lnum, int *trackidx)
             if(stats[tmp1][tmp2]==-1)
             {
                 stats[tmp1][tmp2] = lnum+1;
-                printf("将桶1 %d升倒入桶2\n", tmp2);
-                printf("第%d层，此时水桶水量: %d %d\n", lnum+1, tmp1, tmp2);
+                printf("\t将桶1 %d升倒入桶2\n", tmp2);
+                printf("\t第%d层，此时水桶水量: %d %d\n", lnum+1, tmp1, tmp2);
                 settrack(idx, lnum+1, tmp1, tmp2, init1, init2);
                 idx++;
             }
@@ -201,8 +201,8 @@ int Transfer(int b1, int b2, int lnum, int *trackidx)
         {
             stats[tmp1][0] = lnum+1;
             tmp2 = 0;
-            printf("将桶2倒空\n");
-            printf("第%d层，此时水桶水量: %d %d\n", lnum+1, tmp1, tmp2);
+            printf("\t将桶2倒空\n");
+            printf("\t第%d层，此时水桶水量: %d %d\n", lnum+1, tmp1, tmp2);
             settrack(idx, lnum+1, tmp1, tmp2, init1, init2);
             idx++;
         }
@@ -229,8 +229,8 @@ int Transfer(int b1, int b2, int lnum, int *trackidx)
             if(stats[tmp1][tmp2]==-1)
             {
                 stats[tmp1][tmp2] = lnum+1;
-                printf("将桶2 %d升倒入桶1\n", res1);
-                printf("第%d层，此时水桶水量: %d %d\n", lnum+1, tmp1, tmp2);
+                printf("\t将桶2 %d升倒入桶1\n", res1);
+                printf("\t第%d层，此时水桶水量: %d %d\n", lnum+1, tmp1, tmp2);
                 settrack(idx, lnum+1, tmp1, tmp2, init1, init2);
                 idx++;
             }
@@ -267,7 +267,10 @@ int main()
                 flag = flag + Transfer(track[k][1], track[k][2], lnum, &trackidx);
             }
             if(track[k][0]==-1)
+            {
+                printf("-----------------------------------\n");
                 break;
+            }
         }
         lnum++;
         if(flag==0)

@@ -106,8 +106,8 @@ int Transfer(int b1, int b2, int b3, int lnum, int *trackidx)
             if(stats[tmp1][tmp2][tmp3]==-1)
             {
                 stats[tmp1][tmp2][tmp3] = lnum+1;
-                printf("将桶1 %d升倒入桶2\n", res2);
-                printf("第%d层，此时水桶水量: %d %d %d\n", lnum+1, tmp1, tmp2, tmp3);
+                printf("\t将桶1 %d升倒入桶2\n", res2);
+                printf("\t第%d层，此时水桶水量: %d %d %d\n", lnum+1, tmp1, tmp2, tmp3);
                 settrack(idx, lnum+1, tmp1, tmp2, tmp3, init1, init2, init3);
                 idx++;
             }
@@ -134,8 +134,8 @@ int Transfer(int b1, int b2, int b3, int lnum, int *trackidx)
             if(stats[tmp1][tmp2][tmp3]==-1)
             {
                 stats[tmp1][tmp2][tmp3] = lnum+1;
-                printf("将桶1 %d升倒入桶3\n", res3);
-                printf("第%d层，此时水桶水量: %d %d %d\n", lnum+1, tmp1, tmp2, tmp3);
+                printf("\t将桶1 %d升倒入桶3\n", res3);
+                printf("\t第%d层，此时水桶水量: %d %d %d\n", lnum+1, tmp1, tmp2, tmp3);
                 settrack(idx, lnum+1, tmp1, tmp2, tmp3, init1, init2, init3);
                 idx++;
             }
@@ -167,8 +167,8 @@ int Transfer(int b1, int b2, int b3, int lnum, int *trackidx)
             if(stats[tmp1][tmp2][tmp3]==-1)
             {
                 stats[tmp1][tmp2][tmp3] = lnum+1;
-                printf("将桶2 %d升倒入桶1\n", res1);
-                printf("第%d层，此时水桶水量: %d %d %d\n", lnum+1, tmp1, tmp2, tmp3);
+                printf("\t将桶2 %d升倒入桶1\n", res1);
+                printf("\t第%d层，此时水桶水量: %d %d %d\n", lnum+1, tmp1, tmp2, tmp3);
                 settrack(idx, lnum+1, tmp1, tmp2, tmp3, init1, init2, init3);
                 idx++;
             }
@@ -195,8 +195,8 @@ int Transfer(int b1, int b2, int b3, int lnum, int *trackidx)
             if(stats[tmp1][tmp2][tmp3]==-1)
             {
                 stats[tmp1][tmp2][tmp3] = lnum+1;
-                printf("将桶2 %d升倒入桶3\n", res3);
-                printf("第%d层，此时水桶水量: %d %d %d\n", lnum+1, tmp1, tmp2, tmp3);
+                printf("\t将桶2 %d升倒入桶3\n", res3);
+                printf("\t第%d层，此时水桶水量: %d %d %d\n", lnum+1, tmp1, tmp2, tmp3);
                 settrack(idx, lnum+1, tmp1, tmp2, tmp3, init1, init2, init3);
                 idx++;
             }
@@ -228,8 +228,8 @@ int Transfer(int b1, int b2, int b3, int lnum, int *trackidx)
             if(stats[tmp1][tmp2][tmp3]==-1)
             {
                 stats[tmp1][tmp2][tmp3] = lnum+1;
-                printf("将桶3 %d升倒入桶1\n", res1);
-                printf("第%d层，此时水桶水量: %d %d %d\n", lnum+1, tmp1, tmp2, tmp3);
+                printf("\t将桶3 %d升倒入桶1\n", res1);
+                printf("\t第%d层，此时水桶水量: %d %d %d\n", lnum+1, tmp1, tmp2, tmp3);
                 settrack(idx, lnum+1, tmp1, tmp2, tmp3, init1, init2, init3);
                 idx++;
             }
@@ -256,8 +256,8 @@ int Transfer(int b1, int b2, int b3, int lnum, int *trackidx)
             if(stats[tmp1][tmp2][tmp3]==-1)
             {
                 stats[tmp1][tmp2][tmp3] = lnum+1;
-                printf("将桶3 %d升倒入桶2\n", res2);
-                printf("第%d层，此时水桶水量: %d %d %d\n", lnum+1, tmp1, tmp2, tmp3);
+                printf("\t将桶3 %d升倒入桶2\n", res2);
+                printf("\t第%d层，此时水桶水量: %d %d %d\n", lnum+1, tmp1, tmp2, tmp3);
                 settrack(idx, lnum+1, tmp1, tmp2, tmp3, init1, init2, init3);
                 idx++;
             }
@@ -296,7 +296,10 @@ int main()
                 flag = flag + Transfer(track[k][1], track[k][2], track[k][3], lnum, &trackidx);
             }
             if(track[k][0]==-1)
+            {
+                printf("-----------------------------------\n");
                 break;
+            }
         }
         lnum++;
         if(flag==0)
