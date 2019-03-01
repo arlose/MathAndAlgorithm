@@ -216,7 +216,7 @@ int main()
         }
         lastb1 = b1;
         lastb2 = b2;
-        lastb2 = b3;
+        lastb3 = b3;
         Change(&b1, &b2, &b3);
         printf("此时水桶水量: %d %d %d\n", b1, b2, b3);
         if(b1==Target1&&b2==Target2)
