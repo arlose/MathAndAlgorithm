@@ -11,7 +11,7 @@
 
 int stats[Bucket1+1][Bucket2+1][Bucket3+1];
 
-void Change(int * b1, int * b2, int * b3)
+void Transfer(int * b1, int * b2, int * b3)
 {
     int tmp1 = *b1;
     int tmp2 = *b2;
@@ -217,7 +217,7 @@ int main()
         lastb1 = b1;
         lastb2 = b2;
         lastb3 = b3;
-        Change(&b1, &b2, &b3);
+        Transfer(&b1, &b2, &b3);
         printf("此时水桶水量: %d %d %d\n", b1, b2, b3);
         if(b1==Target1&&b2==Target2)
             break;
