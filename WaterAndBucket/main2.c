@@ -1,4 +1,4 @@
-/* 两个水桶，容积分别为7升和3升，有无限多的水，问如何能获得2升的水 */
+/* 两个水桶，容积分别为7升和3升，有无限多的水，问如何能获得2升的水 （有无限水）*/
 #include <stdio.h>
 
 // assert Bucket1 > Bucket2
@@ -61,8 +61,8 @@ void Change(int * b1, int * b2)
             }
             else
             {
-                tmp1 = 0;
                 tmp2 = tmp1+tmp2;
+                tmp1 = 0;
             }
             res2 = tmp2-(*b2);
             if(stats[tmp1][tmp2]==0)
@@ -153,7 +153,6 @@ void Change(int * b1, int * b2)
 
 int main()
 {
-    int i = 0;
     int b1 = 0;
     int b2 = 0;
     
