@@ -91,8 +91,9 @@ void printResult()
 int main()
 {
     int k = 0;
-
+    int count = 0;
     int x, y;
+    int doneflag = 0;
 
     for(k=0;k<NUM;k++)
     {
@@ -108,6 +109,7 @@ int main()
         for(;y<NUM;y++)
         {
             //printf("-----------------%d %d-------------------\n",y, traceidx);
+
             if(findflag==1)
                 x=0;
             findflag = 0;
@@ -119,6 +121,18 @@ int main()
                     Trace[traceidx] = x;
                     traceidx++;
                     findflag = 1;
+                    if(traceidx==NUM)
+                    {
+                        printResult();
+                        printf("###################%d####################\n", ++count);
+                        traceidx--;
+                        clearQueen(Trace[traceidx],traceidx);
+                        //printResult();
+                        //printf("--------------------------\n");
+                        findflag = 0;
+                        if(count==100)
+                            return 1;
+                    }
                     break;
                 }
             }
@@ -130,18 +144,16 @@ int main()
                 clearQueen(Trace[traceidx],traceidx);
                 y=traceidx-1; // 抵消y++
                 x=Trace[traceidx]+1;
+                if(y==-1)
+                {
+                    doneflag = 1;
+                    printf("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\n");
+                    break;
+                }
             }
-        }
-        if(y==NUM)
-        {
-            printResult();
-            printf("--------------------------------\n");
-            //break;
-        }
-        
-            
+
+        }  
     }
-    
 
     printf("Done!\n");
     return 0;
