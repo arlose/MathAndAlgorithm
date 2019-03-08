@@ -93,7 +93,6 @@ int main()
     int k = 0;
     int count = 0;
     int x, y;
-    int doneflag = 0;
 
     for(k=0;k<NUM;k++)
     {
@@ -142,9 +141,8 @@ int main()
                 clearQueen(Trace[traceidx],traceidx);
                 y=traceidx-1; // 抵消y++
                 x=Trace[traceidx]+1;
-                if(y==-1)
+                if(traceidx==0)
                 {
-                    doneflag = 1;
                     break;
                 }
             }
