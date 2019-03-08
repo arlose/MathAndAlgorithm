@@ -130,8 +130,6 @@ int main()
                         //printResult();
                         //printf("--------------------------\n");
                         findflag = 0;
-                        if(count==100)
-                            return 1;
                     }
                     break;
                 }
@@ -147,7 +145,6 @@ int main()
                 if(y==-1)
                 {
                     doneflag = 1;
-                    printf("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\n");
                     break;
                 }
             }
@@ -155,6 +152,6 @@ int main()
         }  
     }
 
-    printf("Done!\n");
+    printf("There are %d types of answers!\n", count);
     return 0;
 }
