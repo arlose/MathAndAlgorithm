@@ -3,6 +3,7 @@
 #define NUM 8
 
 int Data[NUM][NUM];
+int record[NUM][NUM];
 
 void init()
 {
@@ -67,15 +68,22 @@ void printResult()
 
 int main()
 {
+    int flag = 0;
     Data[0][0] = 1;
     for(int y=1;y<NUM;y++)
     {
+        flag = 0;
         for(int x=0;x<NUM;x++)
+        {
             if(isValid(x,y)==1)
             {
                 setQueen(x,y);
+                flag = 1;
                 break;
             }
+        }
+            
+        flag = 1;
     }
     printResult();
 
