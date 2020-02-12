@@ -20,7 +20,7 @@ Cython==0.29.3
 dask==1.1.4
 decorator==4.1.2
 dill==0.2.8.2
-Django==2.1.5
+Django==2.2.10
 dominate==2.3.5
 drawille==0.1.0
 editdistance==0.3.1
