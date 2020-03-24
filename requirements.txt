@@ -5,7 +5,7 @@ appnope==0.1.0
 astor==0.7.1
 astroid==2.2.5
 baidu-aip==2.2.5.2
-bleach==2.1.1
+bleach==3.1.2
 bypy==1.6.4
 certifi==2018.11.29
 chardet==3.0.4
