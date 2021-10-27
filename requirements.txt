@@ -17,7 +17,7 @@ crcmod==1.7
 cssselect==1.0.3
 cycler==0.10.0
 Cython==0.29.3
-dask==1.1.4
+dask==2021.10.0
 decorator==4.1.2
 dill==0.2.8.2
 Django==2.1.5
